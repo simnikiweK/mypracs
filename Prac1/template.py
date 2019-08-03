@@ -11,10 +11,12 @@ Date: <04/08/2019>
 
 # import Relevant Librares
 import RPi.GPIO as GPIO
+import time
 
 # Logic that you write
 def main():
     pass
+    time.sleep(.5)
 
 counter  = 0
 
@@ -68,7 +70,7 @@ def states(led7,led11,led13):
     if led13=="1":
         GPIO.output(13,GPIO.HIGH)
     else:
-        GPIO.output(13,GPIO.LOW)'''
+        GPIO.output(13,GPIO.LOW)
 
 # Only run the functions if 
 if __name__ == "__main__":
