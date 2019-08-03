@@ -14,7 +14,7 @@ import RPi.GPIO as GPIO
 import time
 
 counter  = 0
-
+#This methods is to initialise the GPIOs for the LEDs and buttons
 def initGPIO():
     
     GPIO.setwarnings(False)
@@ -28,7 +28,7 @@ def initGPIO():
     GPIO.setup(8,GPIO.IN,pull_up_down=GPIO.PUD_DOWN)
     GPIO.add_event_detect(8,GPIO.RISING,callback=decreaseButton,bouncetime=300)
 
-
+#This method is to set the increment for the buttons and calls the state method
 def increaseButton(channel):
     
     global counter    
@@ -39,6 +39,7 @@ def increaseButton(channel):
     counterInbinary = bin(counter)[2:].zfill(3)
     states(counterInbinary[0],counterInbinary[1],counterInbinary[2])
 
+#This method is to set the decrement for the buttons and callsthe states method
 def decreaseButton(channel):
     
     global counter
@@ -50,6 +51,7 @@ def decreaseButton(channel):
     
     states(counterInbinary[0],counterInbinary[1],counterInbinary[2])
 
+#For the states of the LEDs as they change this method is called
 def states(led7,led11,led13):
     
     if led7=="1":
