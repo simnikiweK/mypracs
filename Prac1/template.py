@@ -42,7 +42,7 @@ def increaseButton(channel):
     counterInbinary = bin(counter)[2:].zfill(3)
     states(counterInbinary[0],counterInbinary[1],counterInbinary[2])
 
-'''def decreaseButton(channel):
+def decreaseButton(channel):
     
     global counter
     counter-=1
@@ -53,7 +53,7 @@ def increaseButton(channel):
     
     states(counterInbinary[0],counterInbinary[1],counterInbinary[2])
 
-def states(led7,led11,led13):
+'''def states(led7,led11,led13):
     
     if led7=="1":
         GPIO.output(7,GPIO.HIGH)
