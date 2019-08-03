@@ -32,7 +32,7 @@ def initGPIO():
     GPIO.add_event_detect(8,GPIO.RISING,callback=decreaseButton,bouncetime=300)
 
 
-'''def increaseButton(channel):
+def increaseButton(channel):
     
     global counter    
     counter+=1
@@ -42,7 +42,7 @@ def initGPIO():
     counterInbinary = bin(counter)[2:].zfill(3)
     states(counterInbinary[0],counterInbinary[1],counterInbinary[2])
 
-def decreaseButton(channel):
+'''def decreaseButton(channel):
     
     global counter
     counter-=1
